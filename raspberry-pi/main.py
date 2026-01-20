@@ -1,11 +1,13 @@
 import time
 from camera import stream
 
-print("Raspberry Pi module is running.")
+def handle_new_speed(speed):
+    
+    return None
 
 def main():
     
-    stream()
+    stream(handle_new_speed)
     
     try:
         while True:
@@ -17,4 +19,5 @@ def main():
 
 if __name__ == "__main__":
     
+    print("Raspberry Pi module is running.")
     main()

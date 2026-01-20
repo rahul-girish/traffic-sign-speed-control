@@ -8,7 +8,7 @@ last_sent_speed = None
 
 def send_speed(speed=0):
     try:
-        url = f"http://{config.RASPBERRY_PI_IP}/set_speed?value={speed}"
+        url = f"http://{config.RASPBERRY_PI_IP}:{config.PORT}/set_speed?value={speed}"
         response = requests.get(url, timeout=2)
         print(f"Sent speed {speed}, response: {response.text}")
     except requests.exceptions.RequestException as e:
