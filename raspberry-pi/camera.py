@@ -68,11 +68,11 @@ def video_feed():
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 def start_stream():
-    app.run(host='0.0.0.0', port=5000, debug=False, use_reloader=False)
+    app.run(host='0.0.0.0', port=config.PORT, debug=False, use_reloader=False)
     
 def stream():
     
     thread = threading.Thread(target=start_stream)
     thread.daemon = True
     thread.start()
-    print("Stream started at http://192.168.1.22:5000")
+    print(f"Stream started at http://{config.RASPBERRY_PI_IP}:5000")
